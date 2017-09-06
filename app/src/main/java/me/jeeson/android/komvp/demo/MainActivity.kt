@@ -24,7 +24,7 @@ class MainActivity : BaseActivity() {
         tv = findViewById(R.id.sample_text) as TextView
 
         //测试Dagger2是否正常注入，RxJava是否正常使用
-        Observable.fromCallable { "Test Dagger2 and RxJava: inject is successful ?" + (injectApplication==null) }
+        Observable.fromCallable { "Test Dagger2 and RxJava: inject is successful ?" + (injectApplication!=null) }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(RxLifecycleUtils.bindToLifecycle(this))
