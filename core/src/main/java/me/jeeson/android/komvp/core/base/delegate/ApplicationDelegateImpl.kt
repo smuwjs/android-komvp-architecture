@@ -1,10 +1,14 @@
-package me.jeeson.android.komvp.core.delegate
+package me.jeeson.android.komvp.core.base.delegate
 
 import android.app.Application
 import android.content.Context
 import me.jeeson.android.komvp.core.di.component.ApplicationComponent
 import me.jeeson.android.komvp.core.di.component.DaggerApplicationComponent
 import me.jeeson.android.komvp.core.di.module.AppModule
+import javax.inject.Inject
+import me.jeeson.android.komvp.core.lifecycle.ActivityLifecycleForRxLifecycle
+
+
 
 /**
  * @Description:
@@ -15,6 +19,9 @@ class ApplicationDelegateImpl(val context : Context ) : ApplicationDelegate{
 
     private var mApplication : Application?= null
     private var applicationComponent : ApplicationComponent? = null
+
+    @Inject
+    lateinit var mActivityLifecycleForRxLifecycle: ActivityLifecycleForRxLifecycle
 
     override fun getApplicationComponent(): ApplicationComponent? {
         return applicationComponent
@@ -29,6 +36,9 @@ class ApplicationDelegateImpl(val context : Context ) : ApplicationDelegate{
                 .appModule(AppModule(application))
                 .build()
         applicationComponent?.inject(this)
+
+        mApplication?.registerActivityLifecycleCallbacks(mActivityLifecycleForRxLifecycle)
+
     }
 
     override fun attachBaseContext(base: Context?) {

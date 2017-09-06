@@ -1,4 +1,4 @@
-package me.jeeson.android.komvp.core.delegate
+package me.jeeson.android.komvp.core.base.delegate
 
 import android.app.Application
 import android.content.Context

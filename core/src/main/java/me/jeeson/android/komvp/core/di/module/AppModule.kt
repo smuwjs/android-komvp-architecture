@@ -3,6 +3,7 @@ package me.jeeson.android.komvp.core.di.module
 import android.app.Application
 import dagger.Module
 import dagger.Provides
+import me.jeeson.android.komvp.core.lifecycle.ActivityLifecycleForRxLifecycle
 import javax.inject.Singleton
 
 /**
@@ -18,6 +19,12 @@ class AppModule(val mApplication: Application) {
     @Provides
     fun provideApplication(): Application {
         return mApplication
+    }
+
+    @Singleton
+    @Provides
+    fun provideActivityLifecycleForRxLifecycle() : ActivityLifecycleForRxLifecycle {
+        return ActivityLifecycleForRxLifecycle()
     }
 
 }

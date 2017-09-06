@@ -6,8 +6,8 @@ import android.content.Context
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import me.jeeson.android.komvp.core.delegate.ApplicationDelegate
-import me.jeeson.android.komvp.core.delegate.ApplicationDelegateImpl
+import me.jeeson.android.komvp.core.base.delegate.ApplicationDelegate
+import me.jeeson.android.komvp.core.base.delegate.ApplicationDelegateImpl
 import me.jeeson.android.komvp.core.di.component.ApplicationComponent
 import javax.inject.Inject
 
