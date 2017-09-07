@@ -2,7 +2,6 @@ package me.jeeson.android.komvp.core.base
 
 import android.content.Context
 import android.support.v4.app.Fragment
-import com.trello.rxlifecycle2.android.ActivityEvent
 import com.trello.rxlifecycle2.android.FragmentEvent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -10,7 +9,7 @@ import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
-import me.jeeson.android.komvp.core.lifecycle.FragmentLifecycleable
+import me.jeeson.android.komvp.core.integration.lifecycle.FragmentLifecycleable
 import javax.inject.Inject
 
 /**
@@ -18,7 +17,7 @@ import javax.inject.Inject
  * @Anthor: Jeeson
  * @Time: 2017/8/31 15:51
  */
-open abstract class BaseFragment : Fragment(), IBaseFragment, HasSupportFragmentInjector, FragmentLifecycleable {
+abstract class BaseFragment : Fragment(), IBaseFragment, HasSupportFragmentInjector, FragmentLifecycleable {
 
     @Inject
     lateinit var childFragmentInjector: DispatchingAndroidInjector<Fragment>

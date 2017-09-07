@@ -10,7 +10,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
-import me.jeeson.android.komvp.core.lifecycle.ActivityLifecycleable
+import me.jeeson.android.komvp.core.integration.lifecycle.ActivityLifecycleable
 import javax.inject.Inject
 
 /**
@@ -18,7 +18,7 @@ import javax.inject.Inject
  * @Anthor: Jeeson
  * @Time: 2017/8/31 15:44
  */
-open abstract class BaseActivity : AppCompatActivity(), IBaseActivity, HasSupportFragmentInjector, ActivityLifecycleable {
+abstract class BaseActivity : AppCompatActivity(), IBaseActivity, HasSupportFragmentInjector, ActivityLifecycleable {
 
     @Inject
     lateinit var mFragmentInjector: DispatchingAndroidInjector<Fragment>

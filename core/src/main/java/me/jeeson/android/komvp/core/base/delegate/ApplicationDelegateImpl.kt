@@ -6,7 +6,7 @@ import me.jeeson.android.komvp.core.di.component.ApplicationComponent
 import me.jeeson.android.komvp.core.di.component.DaggerApplicationComponent
 import me.jeeson.android.komvp.core.di.module.AppModule
 import javax.inject.Inject
-import me.jeeson.android.komvp.core.lifecycle.ActivityLifecycleForRxLifecycle
+import me.jeeson.android.komvp.core.integration.lifecycle.ActivityLifecycleForRxLifecycle
 
 
 

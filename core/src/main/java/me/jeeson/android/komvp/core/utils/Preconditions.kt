@@ -5,7 +5,7 @@ package me.jeeson.android.komvp.core.utils
  * Contact with jess.yan.effort@gmail.com
  */
 
-class Preconditions {
+open class Preconditions {
 
     init {
         throw IllegalStateException("you can't instantiate me!")
@@ -119,8 +119,8 @@ class Preconditions {
             return if (start >= 0 && start <= size) if (end >= 0 && end <= size) format("end index (%s) must not be less than start index (%s)", *arrayOf<Any>(Integer.valueOf(end), Integer.valueOf(start))) else badPositionIndex(end, size, "end index") else badPositionIndex(start, size, "start index")
         }
 
-        internal fun format(template: String, vararg args: Any): String {
-            var template = template
+        internal fun format(template1: String, vararg args: Any): String {
+            var template = template1
             template = template.toString()
             val builder = StringBuilder(template.length + 16 * args.size)
             var templateStart = 0

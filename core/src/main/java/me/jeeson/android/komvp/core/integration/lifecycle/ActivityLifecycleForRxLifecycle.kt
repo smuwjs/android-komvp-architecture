@@ -1,4 +1,4 @@
-package me.jeeson.android.komvp.core.lifecycle
+package me.jeeson.android.komvp.core.integration.lifecycle
 
 import android.app.Activity
 import android.app.Application
@@ -7,9 +7,6 @@ import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
 
 import com.trello.rxlifecycle2.android.ActivityEvent
-
-import javax.inject.Inject
-import javax.inject.Singleton
 
 import io.reactivex.subjects.Subject
 

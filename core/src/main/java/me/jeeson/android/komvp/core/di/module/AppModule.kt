@@ -3,7 +3,9 @@ package me.jeeson.android.komvp.core.di.module
 import android.app.Application
 import dagger.Module
 import dagger.Provides
-import me.jeeson.android.komvp.core.lifecycle.ActivityLifecycleForRxLifecycle
+import me.jeeson.android.komvp.core.integration.lifecycle.ActivityLifecycleForRxLifecycle
+import me.jeeson.android.komvp.core.integration.manager.IRepositoryManager
+import me.jeeson.android.komvp.core.integration.manager.RepositoryManagerImpl
 import javax.inject.Singleton
 
 /**
@@ -25,6 +27,12 @@ class AppModule(val mApplication: Application) {
     @Provides
     fun provideActivityLifecycleForRxLifecycle() : ActivityLifecycleForRxLifecycle {
         return ActivityLifecycleForRxLifecycle()
+    }
+
+    @Singleton
+    @Provides
+    fun provideRepositoryManager() : IRepositoryManager {
+        return RepositoryManagerImpl()
     }
 
 }

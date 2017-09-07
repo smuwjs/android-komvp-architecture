@@ -6,6 +6,7 @@ import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
 import me.jeeson.android.komvp.core.base.delegate.ApplicationDelegateImpl
 import me.jeeson.android.komvp.core.di.module.AppModule
+import me.jeeson.android.komvp.core.integration.manager.IRepositoryManager
 import javax.inject.Singleton
 
 /**
@@ -22,7 +23,8 @@ import javax.inject.Singleton
 ))
 interface ApplicationComponent {
 
-    fun application(): Application
+    fun application() : Application
+    fun repositoryManager() : IRepositoryManager
 
     fun inject(applicationDelegateImpl: ApplicationDelegateImpl)
 }

@@ -1,9 +1,5 @@
 package me.jeeson.android.komvp.demo
 
-import android.app.Application
-
-import android.test.ApplicationTestCase
-
 /**
  * Instrumentation test, which will execute on an Android device.
 
@@ -12,4 +8,4 @@ import android.test.ApplicationTestCase
 /**
  * [Testing Fundamentals](http://d.android.com/tools/testing/testing_android.html)
  */
-class ApplicationTest : ApplicationTestCase<Application>(Application::class.java)
+class ApplicationTest

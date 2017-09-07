@@ -1,4 +1,4 @@
-package me.jeeson.android.komvp.core.lifecycle
+package me.jeeson.android.komvp.core.integration.lifecycle
 
 import android.content.Context
 import android.os.Bundle

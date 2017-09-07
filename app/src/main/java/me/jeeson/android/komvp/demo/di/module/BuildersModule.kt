@@ -3,7 +3,7 @@ package me.jeeson.android.komvp.demo.di.module
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import me.jeeson.android.komvp.core.di.scope.ActivityScope
-import me.jeeson.android.komvp.demo.MainActivity
+import me.jeeson.android.komvp.demo.mvp.ui.MainActivity
 
 /**
  * @Description:

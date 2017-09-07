@@ -1,6 +1,10 @@
 package me.jeeson.android.komvp.demo.di.module
 
 import dagger.Module
+import dagger.Provides
+import me.jeeson.android.komvp.core.di.scope.ActivityScope
+import me.jeeson.android.komvp.demo.mvp.contract.MainContract
+import me.jeeson.android.komvp.demo.mvp.model.MainModel
 
 /**
  * @Description:
@@ -11,4 +15,11 @@ import dagger.Module
  */
 
 @Module
-class MainModule
+class MainModule {
+
+    @ActivityScope
+    @Provides
+    internal fun provideMainModel(model: MainModel): MainContract.Model {
+        return model
+    }
+}

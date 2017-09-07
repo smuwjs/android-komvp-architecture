@@ -1,4 +1,4 @@
-package me.jeeson.android.komvp.demo
+package me.jeeson.android.komvp.demo.mvp.ui
 
 import android.app.Application
 import android.os.Bundle
@@ -7,12 +7,24 @@ import android.widget.Toast
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import me.jeeson.android.komvp.core.base.BaseActivity
 import me.jeeson.android.komvp.core.utils.RxLifecycleUtils
+import me.jeeson.android.komvp.demo.R
+import me.jeeson.android.komvp.demo.mvp.contract.MainContract
+import me.jeeson.android.komvp.demo.mvp.presenter.MainPresenter
+import me.jeeson.android.komvp.mvp.base.BaseMvpActivity
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseMvpActivity<MainPresenter>() , MainContract.View{
+
+    override fun hideLoading() {
+    }
+
+    override fun showMessage(message: String) {
+    }
+
+    override fun showLoading() {
+    }
 
     @Inject
     lateinit var injectApplication : Application
@@ -30,11 +42,10 @@ class MainActivity : BaseActivity() {
                 .compose(RxLifecycleUtils.bindToLifecycle(this))
                 .subscribe { str -> tv?.text = str }
 
-        //测试RxLifecycle在Activity关闭是否能正常停止
-        Observable.interval(5, TimeUnit.SECONDS)
-                .observeOn(AndroidSchedulers.mainThread())
-                //注释后，Activity关闭不能停止,说明RxLifecycle可正常使用
-                .compose(RxLifecycleUtils.bindToLifecycle(this))
-                .subscribe({Toast.makeText(this, "Test RxLifecycle: hello!", Toast.LENGTH_SHORT).show()})
+        mPresenter.test()
+    }
+
+    override fun test() {
+        Toast.makeText(this, "Test RxLifecycle: hello!", Toast.LENGTH_SHORT).show()
     }
 }

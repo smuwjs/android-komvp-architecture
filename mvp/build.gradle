@@ -22,6 +22,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
@@ -33,6 +36,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 
+
+    kapt(rootProject.ext.dependencies["dagger2-compiler"]) {
+        exclude module: 'dagger'
+    }
+    kapt(rootProject.ext.dependencies["dagger2-android-processor"]) {
+        exclude module: 'dagger'
+    }
     //kotlin
     compile rootProject.ext.dependencies["kotlin-stdlib-jre7"]
 
