@@ -20,8 +20,8 @@ abstract class BaseMvpActivity<P : BasePresenter<*,*>> : BaseActivity(), IView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if(mPresenter is BasePresenter<*, *>)
-            (mPresenter as BasePresenter<IModel, IView>).mRootView = this
+        @Suppress("UNCHECKED_CAST")
+        (mPresenter as BasePresenter<IModel, IView>).mRootView = this
     }
 
     override fun onDestroy() {

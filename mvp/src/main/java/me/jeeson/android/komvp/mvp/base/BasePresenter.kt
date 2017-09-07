@@ -34,7 +34,7 @@ open class BasePresenter<M : IModel, V : IView> : IPresenter {
 
     override fun onDestroy() {
         if (mModel != null)
-            mModel!!.onDestroy()
+            mModel?.onDestroy()
         this.mModel = null
         this.mRootView = null
     }

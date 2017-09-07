@@ -16,11 +16,11 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
-        externalNativeBuild {
+        /*externalNativeBuild {
             cmake {
                 cppFlags ""
             }
-        }
+        }*/
     }
     buildTypes {
         release {
@@ -29,11 +29,11 @@ android {
         }
     }
 
-    externalNativeBuild {
+    /*externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
         }
-    }
+    }*/
     kapt {
         generateStubs = true
     }

@@ -1,15 +1,14 @@
 package me.jeeson.android.komvp.mvp.util
 
 import com.trello.rxlifecycle2.LifecycleTransformer
-import com.trello.rxlifecycle2.RxLifecycle
 import com.trello.rxlifecycle2.android.ActivityEvent
 import com.trello.rxlifecycle2.android.FragmentEvent
 
-import dagger.internal.Preconditions
 import io.reactivex.annotations.NonNull
 import me.jeeson.android.komvp.core.integration.lifecycle.ActivityLifecycleable
 import me.jeeson.android.komvp.core.integration.lifecycle.FragmentLifecycleable
 import me.jeeson.android.komvp.core.integration.lifecycle.Lifecycleable
+import me.jeeson.android.komvp.core.utils.Preconditions
 import me.jeeson.android.komvp.core.utils.RxLifecycleUtils
 import me.jeeson.android.komvp.mvp.IView
 
