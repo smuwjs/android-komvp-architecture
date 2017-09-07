@@ -1,14 +1,10 @@
 package me.jeeson.android.komvp.demo.mvp.presenter
 
-import android.widget.Toast
-import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import me.jeeson.android.komvp.core.di.scope.ActivityScope
-import me.jeeson.android.komvp.core.utils.RxLifecycleUtils
 import me.jeeson.android.komvp.demo.mvp.contract.MainContract
 import me.jeeson.android.komvp.mvp.base.BasePresenter
 import me.jeeson.android.komvp.mvp.util.MVPRxLifecycleUtils
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
