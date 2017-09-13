@@ -22,7 +22,7 @@ abstract class BaseFragment : Fragment(), IBaseFragment, HasSupportFragmentInjec
     @Inject
     lateinit var childFragmentInjector: DispatchingAndroidInjector<Fragment>
 
-    private val mLifecycleSubject = BehaviorSubject.create<FragmentEvent>()
+    internal val mLifecycleSubject = BehaviorSubject.create<FragmentEvent>()
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)

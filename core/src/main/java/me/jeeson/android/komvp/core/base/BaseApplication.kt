@@ -21,7 +21,7 @@ open class BaseApplication : Application(), IBaseApplication, HasActivityInjecto
     @Inject
     lateinit var mDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
-    private var mAppDelegate: ApplicationDelegate? = null
+    internal var mAppDelegate: ApplicationDelegate? = null
 
     override fun onCreate() {
         super.onCreate()

@@ -23,7 +23,7 @@ abstract class BaseActivity : AppCompatActivity(), IBaseActivity, HasSupportFrag
     @Inject
     lateinit var mFragmentInjector: DispatchingAndroidInjector<Fragment>
 
-    private val mLifecycleSubject = BehaviorSubject.create<ActivityEvent>()
+    internal val mLifecycleSubject = BehaviorSubject.create<ActivityEvent>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)

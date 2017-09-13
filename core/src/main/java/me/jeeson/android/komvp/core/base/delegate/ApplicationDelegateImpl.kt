@@ -17,8 +17,8 @@ import me.jeeson.android.komvp.core.integration.lifecycle.ActivityLifecycleForRx
  */
 class ApplicationDelegateImpl(val context : Context ) : ApplicationDelegate{
 
-    private var mApplication : Application?= null
-    private var applicationComponent : ApplicationComponent? = null
+    internal var mApplication : Application?= null
+    internal var applicationComponent : ApplicationComponent? = null
 
     @Inject
     lateinit var mActivityLifecycleForRxLifecycle: ActivityLifecycleForRxLifecycle

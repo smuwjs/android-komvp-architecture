@@ -20,13 +20,13 @@ class MainModule {
 
     @ActivityScope
     @Provides
-    internal fun provideMainModel(model: MainModel): MainContract.Model {
+    fun provideMainModel(model: MainModel): MainContract.Model {
         return model
     }
 
     @ActivityScope
     @Provides
-    internal fun provideMainView(mainActivity : MainActivity) : MainContract.View {
+    fun provideMainView(mainActivity : MainActivity) : MainContract.View {
         return mainActivity
     }
 }
