@@ -16,7 +16,7 @@ import javax.inject.Inject
  */
 @ActivityScope
 class MainPresenter @Inject
-constructor(model: MainContract.Model) : BasePresenter<MainContract.Model, MainContract.View>(model) {
+constructor(model: MainContract.Model, view : MainContract.View) : BasePresenter<MainContract.Model, MainContract.View>(model, view) {
 
     fun test() {
         //测试RxLifecycle在Activity关闭是否能正常停止

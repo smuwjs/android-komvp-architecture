@@ -23,6 +23,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>() , MainContract.View{
 
         //测试Dagger2是否正常注入，RxJava是否正常使用
         tv?.text = "Test Dagger2 and RxJava: inject is successful ?" + (injectApplication!=null)
+        mPresenter.test()
     }
 
     override fun test() {
