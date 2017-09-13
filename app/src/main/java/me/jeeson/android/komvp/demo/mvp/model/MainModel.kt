@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit
 @ActivityScope
 class MainModel @Inject
 constructor(repositoryManager: IRepositoryManager) : BaseModel(repositoryManager), MainContract.Model {
+
     override fun test(): Observable<Long>? {
         return io.reactivex.Observable.interval(5, TimeUnit.SECONDS)
     }

@@ -10,5 +10,6 @@ import javax.inject.Scope
  * @Time: 2017/7/10 13:00
  */
 @Scope
+@MustBeDocumented
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 annotation class ApplicationScope

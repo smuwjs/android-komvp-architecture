@@ -19,7 +19,7 @@ import me.jeeson.android.komvp.mvp.IView
  * *
  * @Time: 2017/9/7 11:43
  */
-class MVPRxLifecycleUtils : RxLifecycleUtils() {
+class MVPRxLifecycleUtils {
     companion object {
 
         /**
@@ -37,7 +37,7 @@ class MVPRxLifecycleUtils : RxLifecycleUtils() {
                                event: ActivityEvent): LifecycleTransformer<T> {
             Preconditions.checkNotNull(view, "view == null")
             if (view is ActivityLifecycleable) {
-                return bindUntilEvent(view, event)
+                return RxLifecycleUtils.bindUntilEvent(view, event)
             } else {
                 throw IllegalArgumentException("view isn't ActivityLifecycleable")
             }
@@ -58,7 +58,7 @@ class MVPRxLifecycleUtils : RxLifecycleUtils() {
                                event: FragmentEvent): LifecycleTransformer<T> {
             Preconditions.checkNotNull(view, "view == null")
             if (view is FragmentLifecycleable) {
-                return bindUntilEvent(view, event)
+                return RxLifecycleUtils.bindUntilEvent(view, event)
             } else {
                 throw IllegalArgumentException("view isn't FragmentLifecycleable")
             }
@@ -76,7 +76,7 @@ class MVPRxLifecycleUtils : RxLifecycleUtils() {
         fun <T> bindToLifecycle(@NonNull view: IView?): LifecycleTransformer<T> {
             Preconditions.checkNotNull(view, "view == null")
             if (view is Lifecycleable<*>) {
-                return bindToLifecycle( view as Lifecycleable<*>)
+                return RxLifecycleUtils.bindToLifecycle(view)
             } else {
                 throw IllegalArgumentException("view isn't Lifecycleable")
             }

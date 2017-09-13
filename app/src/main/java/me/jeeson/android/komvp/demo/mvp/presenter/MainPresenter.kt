@@ -27,8 +27,4 @@ constructor(model: MainContract.Model, view : MainContract.View) : BasePresenter
                 ?.subscribe({mRootView?.test() })
 
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
 }

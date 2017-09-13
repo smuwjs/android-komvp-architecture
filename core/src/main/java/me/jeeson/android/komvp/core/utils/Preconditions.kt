@@ -1,10 +1,5 @@
 package me.jeeson.android.komvp.core.utils
 
-/**
- * Created by jess on 26/09/2016 13:59
- * Contact with jess.yan.effort@gmail.com
- */
-
 open class Preconditions {
 
     init {
